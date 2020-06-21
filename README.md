@@ -74,13 +74,14 @@ Once you have all the components, I suggest following this order to assemble the
 ## Building Firmware
 Once the keyboard is built, you'll need to program it. To use the keymap I've included, you'll need to setup the [QMK Firmware project](https://github.com/qmk/qmk_firmware) to build the firmware and the [teensy_loader_cli](https://github.com/PaulStoffregen/teensy_loader_cli) to flash it to your Teensy2.0.
 
+1. Copy the split_print folder to /qmk_firmware/keyboards
 
-To build the firmware in /qmk_firmware:
+2. Build the firmware in /qmk_firmware:
 
 ```qmk compile -kb split_print -km default```
 
 
-Then, copy the generated hex file from /qmk_firmware/.build to /teensy_loader_cli and flash hex file to each keyboard half:
+3. Copy the generated hex file from /qmk_firmware/.build to /teensy_loader_cli and flash hex file to each keyboard half:
 
 ```teensy_loader_cli --mcu=atmega32u4 -w split_print_default_default.hex```
 
