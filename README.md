@@ -2,15 +2,20 @@
 This is a split, top-mounted, ortholinear keyboard I built to use with QMK firmware and the Teensy2.0. This repo contains step files for the keyboard case and chiclet-style keycaps, gerber files, and the keymap I'm currently using. Read further for building instructions, parts list, and tips I recommend while building this keyboard.
 
 ## Repo Contents
-Here's a quick breakdown of what you'll find in this repo:
+Here's a quick breakdown of what you'll find here:
 
-- 3D print models
-    - case_left_dovetail.stl -> left half of the keyboard case
-    - case_right_dovetail.stl -> right half of the keyboard case
-    - keycap_standard.stl -> custom cherry chiclet keycap
-    - keycap_with_nub.stl -> same as keycap_standard but with F and J nub to identify home row
-    - plate.stl -> top plate of case to affix keyswitches
-    - wrist_rest.stl -> optional wrist rest
++ 3D print models
+    + rev1
+        - case_v1_left_dovetail.stl -> left half of the case v1
+        - case_v1_right_dovetail.stl -> right half of the case v1
+        - plate_v1.stl -> top plate of case to attach keyswitches
+    + rev2
+        - base_v2_single.stl -> single, whole base with hardware tolerace adjustments
+        - plate_v2.stl -> switch plate with hardware tolerance adjustments
+    + misc
+        - keycap_standard.stl -> custom cherry chiclet keycap
+        - keycap_with_nub.stl -> same as keycap_standard but with F and J nub to identify home row
+        - wrist_rest.stl -> optional wrist rest
 - Keyboard_pcb_gerber.zip -> all necessary gerber files to fabricate PCB
 - split_print -> keymap and make files to build firmware with QMK
 - pics -> pictures of my own build
@@ -18,25 +23,35 @@ Here's a quick breakdown of what you'll find in this repo:
 ## Printing Components
 For a full build of this keyboard you'll need to print:
 
-- 2 case_left_dovetail
-- 2 case_right_dovetail
-- 58 keycap_standard
-- 2 keycap_with_nub (for F and J)
-- 2 plate
-- 2 wrist_rest (optional)
 
-I printed these with an Elegoo Mars resin printer, which has a restricted build volume of 120mm x 68mm x 155mm. To fit the components in the space, I had to get creative with part positioning and split the case into the two halves that will be joined later. A few recommendations while printing these with this printer:
+- 2 base_v2_single OR  
+    - 2 case_v1_left_dovetail
+    - 2 case_v1_right_dovetail
+- 2 plate_v2 OR
+    - 2 plate_v1
+- 58 keycap_standard (optional)
+- 2 keycap_with_nub (optional, for F and J)
+- 2 wrist_rests (optional)
 
-- The case parts print best with support structures interfacing mainly with the bottom face of the case. The flat bottom face is much easier to sand than the interior of the case.
-- The keycaps print best with the top face pointing down flat, with the stem pointing straight up. This allows for a nice smooth typing surface and helps keep the stem from warping.
-- The plate prints well angled with the top facing upward. Added supports on the side edges will help prevent warping.
-- Remember to *hollow out* the wrist rest or you'll be in for a bad time and lots of wasted resin... 
+If you have a large enough build area on your printer, use the rev2 case components and you'll have a better build experience. 
+
+General Notes:
+
+- Remember to *hollow out* the wrist rest to your desired thickness or you'll waste a lot of material.
+- I found the case parts print best with support structures interfacing mainly with the bottom face of the case. The flat bottom face is much easier to sand than the interior of the case.
+- The keycaps print better with the stem pointing toward the build plate. This provided for a smooth typing surface and helps keep the stem from warping.
+- A quick rub-down with some mineral oil can help finish the parts after sanding.
+
+REV1 NOTE:
+
+I printed the rev1 build with a MSLA resin printer (Elegoo Mars), which has a restricted build volume of 120mm x 68mm x 155mm. To fit the components in the space, I had to get creative with part positioning and split the case into the two halves that will be joined later. Maybe I got a little too creative... I neglected any tolerance in the dovetails and ended up sanding the tolerance into the dovetails so the two parts could fit cleanly. I don't recommend this version of the case unless it's the only version that fits on your printer.
+
 
 ## Printing PCBs
 Okay so you probably won't be printing this PCB yourself, but it also shouldn't be expensive to order it from one of the many fabrication shops. I used [JLCPCB](https://jlcpcb.com) because they linked directly from [EasyEDA](https://easyeda.com), the design software I used to create the layout. In all 10 boards cost me less than $30, but your mileage may vary. **You'll need 2 PCBs total**, one for each half of the keyboard.
 
 ## Other Hardware
-The build obviously requires more hardware and electrical components than I can provide in this repo. You'll need a **soldering iron** for the electrical components, but I'm assuming you have or know to get one. Here are the other necessary components with the respective DigiKey or McMaster-Carr part I used:
+The build obviously requires more hardware and electrical components than I can provide in this repo. You'll need a **soldering iron** for the electrical components, but I'm assuming you already have one. Here are the other necessary components with the respective DigiKey or McMaster-Carr part I used:
 
 - (2) Teensy2.0 [DK# 1528-1993-ND](https://www.digikey.com/product-detail/en/adafruit-industries-llc/199/1528-1993-ND/6827126)
 - (4) 12pos 1 row headers for Teensy2.0 [DK# 2057-PH1-12-UA-ND](https://www.digikey.com/product-detail/en/adam-tech/PH1-12-UA/2057-PH1-12-UA-ND/9830395)
@@ -67,9 +82,10 @@ Once you have all the components, I suggest following this order to assemble the
 4. Add the headers to the Teensy2.0 and solder the Teensy to the top-left of the PCB so the USB port is pointing to the left.
 5. Snap a switch into each of the 4 corners of the plate and solder them to the appropriate spots of PCB. This will hold the plate flat against the board and make the rest of the switches easier to snap into place.
 6. Snap in and solder the remaining 26 switches onto the board.
-7. Assemble the case by snapping a case_left_dovetail into a case_right_dovetail. I needed to sand the dovetails to fit because of minor warping in the printing process. You can adhere the pieces with super glue. Fill any remaining gaps in the dovetails by filling them with resin from your printer, wiping the surface clean around them, and curing under a UV lamp for a permanent hold.
-8. Due a limitation of my case design, you will need to make a space on the case for the TRRS jack so it doesn't snap off while screwing the plate on. I recommend filing a recess on the left half to accomodate the jack and whatever TRRS cable you have chosen to use.
-9. Finally, you can fit the nuts into the case and screw the plate onto the case. 
+7. For rev2 builds, you can proceed to bolt the plate onto the base. For rev1 builds, see these additional notes:
+    - Assemble the case by sliding the dovetails of a right and left half together. I needed to sand the dovetails to fit because of warping in the printing process. You can adhere the pieces with super glue. Fill any remaining gaps with resin from your printer, wiping the surface clean around them, and curing under a UV lamp for a more permanent hold.
+    - Due a limitation of my original design, you will also need to file a space on the case for the TRRS jack since it fits below the edge of the base. Check the diameter of your TRRS cable and be sure to file enough to accomodate the jack and whatever cable you have chosen to use.
+
 
 ## Building Firmware
 Once the keyboard is built, you'll need to program it. To use the keymap I've included, you'll need to setup the [QMK Firmware project](https://github.com/qmk/qmk_firmware) to build the firmware and the [teensy_loader_cli](https://github.com/PaulStoffregen/teensy_loader_cli) to flash it to your Teensy2.0.
@@ -88,9 +104,7 @@ Once the keyboard is built, you'll need to program it. To use the keymap I've in
 If you want to modify the keymap.c for your own custom layout, checkout the [QMK keycodes](https://beta.docs.qmk.fm/using-qmk/simple-keycodes/keycodes_basic) so you know what to add into the keymap.
 
 ## Areas of Improvement
-There are a few things that I recognize could be better, considering this was my first time using these tools or building a keyboard. I should address these if I attempt a second build.
+This will be an evolving project with each keyboard I build, so I'm tracking things to address in future builds below.
 
-- A cutaway in case_left_dovetail should be added to accomodate the TRRS jack without needing to sand a cutout after printing.
-- The sides of the case could be a little thicker to allow for nut and screw holes that have a wider tolerance. This will help hardware fit and help prevent cracking of the case when tightening the hardware.
-- The left-most key column should use a different input pin on the Teensy. The current pin is shared with the LED and has the unintended side-effect of illuminating the LED at all times and driving it slightly brighter when a key in the left column is depressed. Oops...
-- The case could add a slight angle to the keys to improve ergonomics.
+- The left-most key column should use a different input pin on the Teensy. The current pin is shared with the LED and has the unintended side-effect of illuminating the LED at all times while driving it slightly brighter when a key in the left column is depressed.
+- Ergonomics could be a greater consideration, with the case angled in whatever direction necessary to improve the typing experience.
