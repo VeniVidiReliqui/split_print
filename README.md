@@ -75,7 +75,7 @@ I used Cherry Mx Black switches for this build and am partial to Cherry Mx Clear
 ## Building Keyboard
 Once you have all the components, I suggest following this order to assemble the keyboard for the easiest build:
 
-1. Orient the PCB so the "Designed By" is face-down and the dense pad section is at the top. All the components will be populated on the top of the PCB in this orientation. Check the pictures if this isn't clear.
+1. Orient the PCB so the "Designed By" is face-down and the Teensy2.0 through-holes are at the top left. All the components will be populated on the top of the PCB in this orientation. Check the pictures if this isn't clear.
 2. Solder 30 of the diodes into the through-holes in the top right section of the PCB. Be sure to orient the diode so the cathode (side with the black ring) is pointed toward the square pad.
 2. Solder the TRRS jack to the 5 through-holes to the left of the diode array. You can use electrical tape to hold it flat to the PCB while you solder.
 3. Solder the 4.7k resistors to the left of the TRRS jack. Orientation doesn't matter, but I like to match the direction of the colored rings for consistency.
