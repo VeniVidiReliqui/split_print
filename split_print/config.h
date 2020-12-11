@@ -49,7 +49,7 @@
 #define F_SCL                   400000L // default
 #define USE_I2C
 #define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT       2000
+#define SPLIT_USB_TIMEOUT       1000
 #define SPLIT_USB_TIMEOUT_POLL  10
 
 /* Select hand configuration */
