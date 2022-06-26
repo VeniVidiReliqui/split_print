@@ -1,3 +1,5 @@
+# Note: Currently being updated for Pro Micro. PCB is done, but a new keyboard case is necessary
+
 # Split-Print
 This is a split, top-mounted, ortholinear keyboard I built to use with QMK firmware and the Pro Micro compatible Bit-C. This repo contains step files for the keyboard case, gerber files for the PCB, and the keymap I'm currently using. Read further for building instructions, parts list, and tips I recommend while building this keyboard.
 
