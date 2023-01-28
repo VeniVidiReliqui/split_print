@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_TAB,  KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,       KC_TILD, KC_PGUP, KC_UP,    KC_PGDN, KC_MINS, KC_F11, \
 		MO(1),   KC_NO,   KC_VOLD, KC_VOLU, KC_MUTE, KC_NO,       KC_HOME, KC_LEFT, KC_DOWN,  KC_RGHT, KC_EQL,  KC_F12, \
 		KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_END,  KC_QUOT, KC_DQUO,  KC_DOT,  KC_SLSH, KC_RSFT, \
-		KC_LCTL, KC_NO,   KC_NO,   KC_LALT, KC_RGUI, KC_SPC,      KC_SPC,  KC_DEL,  KC_LBRC,  KC_RBRC, KC_GRV,  KC_RCTL \
+		KC_LCTL, KC_NO,   KC_NO,   KC_LALT, KC_RGUI, KC_SPC,      KC_SPC,  KC_DEL,  KC_LCBR,  KC_RCBR, KC_GRV,  KC_RCTL \
         ),
 
     // Gaming layer
