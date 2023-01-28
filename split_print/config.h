@@ -8,9 +8,9 @@
 #define PRODUCT_ID      0x6060
 
 #define DEVICE_VER      0x0002
-#define MANUFACTURER    VeniVidiReliqui
-#define PRODUCT         splitprintv2
-#define DESCRIPTION     keyboard
+#define MANUFACTURER    "VeniVidiReliqui"
+#define PRODUCT         "splitprintv2"
+#define DESCRIPTION     "keyboard"
 
 /* key matrix size */
 #define MATRIX_ROWS 10
@@ -42,7 +42,7 @@
 #define MOUSEKEY_INTERVAL           10      // Time between cursor movements in milliseconds
 #define MOUSEKEY_MOVE_DELTA         5       // Step size
 #define MOUSEKEY_MAX_SPEED          5       // Maximum cursor speed at which acceleration stops
-#define MOUSEKEY_TIME_TO_MAX        1000    // Time until maximum cursor speed is reached
+#define MOUSEKEY_TIME_TO_MAX        100     // Time until maximum cursor speed is reached
 /* Mouse Wheel settings */
 #define MOUSEKEY_WHEEL_DELAY        10      // Delay between pressing a wheel key and wheel movement
 #define MOUSEKEY_WHEEL_INTERVAL     80      // Time between wheel movements
@@ -68,12 +68,27 @@
 
 //#define F_SCL                   400000L // default
 #define USE_I2C
+
+/* Auto-detect the Left half, which will be plugged into computer. If you want
+ * to power the split keyboard with the right half, you need to modify the hand
+ * configuration below
+ *
+ * Note: This can cause issues with powered USB hubs. If power is delivered
+ * to the keyboard but the computer isn't detected, this leads to both halves
+ * booting into right hand mode. A power cycle of the board fixes this.
+ *
+ * If you run into this issue, consider commenting this out and making separate
+ * left/right builds with the MASTER_LEFT and MASTER_RIGHT flags.
+ */
 #define SPLIT_USB_DETECT
-#define SPLIT_USB_TIMEOUT       1000
-#define SPLIT_USB_TIMEOUT_POLL  10
+
+#ifdef SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT       1000    // How long to wait before booting into right hand mode
+#define SPLIT_USB_TIMEOUT_POLL  10      // Poll rate to detect left/right hand mode
+#endif
 
 /* Select hand configuration */
-#define MASTER_LEFT // this is the default
-// #define MASTER_RIGHT
+#define MASTER_LEFT
+//#define MASTER_RIGHT
 
 #endif
