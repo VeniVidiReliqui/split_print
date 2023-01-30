@@ -1,5 +1,3 @@
-# Note: Currently being updated for Pro Micro. PCB is done, but a new keyboard case is necessary
-
 # Split-Print
 This is a split, top-mounted, ortholinear keyboard I built to use with QMK firmware and the Pro Micro compatible Bit-C. This repo contains step files for the keyboard case, gerber files for the PCB, and the keymap I'm currently using. Read further for building instructions, parts list, and tips I recommend while building this keyboard.
 
@@ -40,7 +38,7 @@ Okay so you probably won't be printing this PCB yourself, but it also shouldn't 
 ## Electronics and Other Hardware
 The build obviously requires more hardware and electrical components than I can provide in this repo. You'll need a **soldering iron** for the electrical components, but I'm assuming you already have one. Here are the other necessary components with the respective DigiKey, McMaster-Carr, etc part I used:
 
-- (2) Bit-C [nullbits.co/bit-c](https://nullbits.co/bit-c/) or any equivalent [Pro Micro](https://www.sparkfun.com/products/12640)
+- (2) [Nullbits Bit-C](https://nullbits.co/bit-c/) or any equivalent [Pro Micro](https://www.sparkfun.com/products/12640)
 - (2) IC Sockets (optional) [ICS-624-T](https://www.digikey.com/en/products/detail/adam-tech/ICS-624-T/9832867)
 - (4) 12pos 1 row headers for Pro Micro [DK# 2057-PH1-12-UA-ND](https://www.digikey.com/product-detail/en/adam-tech/PH1-12-UA/2057-PH1-12-UA-ND/9830395)
 - (2) Reset Buttons [TS02-66-55-BK-160-LCR-D](https://www.digikey.com/en/products/detail/cui-devices/TS02-66-55-BK-160-LCR-D/15634374)
