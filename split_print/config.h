@@ -8,9 +8,9 @@
 #define PRODUCT_ID      0x6060
 
 #define DEVICE_VER      0x0002
-#define MANUFACTURER    VeniVidiReliqui
-#define PRODUCT         splitprintv2
-#define DESCRIPTION     keyboard
+#define MANUFACTURER    "VeniVidiReliqui"
+#define PRODUCT         "splitprintv2"
+#define DESCRIPTION     "keyboard"
 
 /* key matrix size */
 #define MATRIX_ROWS 10
@@ -42,7 +42,7 @@
 #define MOUSEKEY_INTERVAL           10      // Time between cursor movements in milliseconds
 #define MOUSEKEY_MOVE_DELTA         5       // Step size
 #define MOUSEKEY_MAX_SPEED          5       // Maximum cursor speed at which acceleration stops
-#define MOUSEKEY_TIME_TO_MAX        1000    // Time until maximum cursor speed is reached
+#define MOUSEKEY_TIME_TO_MAX        100     // Time until maximum cursor speed is reached
 /* Mouse Wheel settings */
 #define MOUSEKEY_WHEEL_DELAY        10      // Delay between pressing a wheel key and wheel movement
 #define MOUSEKEY_WHEEL_INTERVAL     80      // Time between wheel movements
