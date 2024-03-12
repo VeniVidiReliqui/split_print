@@ -1,4 +1,4 @@
-# Split-Print
+# Split_Print
 This is a split, top-mounted, ortholinear keyboard I built to use with QMK firmware and the Pro Micro compatible Bit-C. This repo contains step files for the keyboard case, gerber files for the PCB, and the keymap I'm currently using. Read further for building instructions, parts list, and tips I recommend while building this keyboard.
 
 ## Repo Contents
@@ -12,7 +12,7 @@ Here's a quick breakdown of what you'll find here:
         - keycap_standard.stl -> custom cherry chiclet keycap (I don't recommend using these)
         - keycap_with_nub.stl -> same as keycap_standard but with F and J nub to identify home row
         - wrist_rest.stl -> optional wrist rest
-- split-print -> keymap and make files to build firmware with QMK
+- split_print -> keymap and make files to build firmware with QMK
 - pics -> pictures of my own build
 - Keyboard_pcb_gerber.zip -> all necessary gerber files to fabricate PCB
 
@@ -77,20 +77,20 @@ Once you have all the components, I suggest following this order to assemble the
 ## Building Firmware
 Once the keyboard is built, you'll need to program it. To use the keymap I've included, you'll need to setup the [QMK Firmware project](https://github.com/qmk/qmk_firmware) to build and flash the firmware to your Bit-C or Pro Micro. Once this is done, you'll need to manually copy the layout and config files to the appropriate location in qmk_firmware:
 
-1. Copy the split-print folder to qmk_firmware/keyboards/. Alternatively, create a symlink from within the qmk_firmware/keyboards/ directory to the split-print directory in this repo.
+1. Copy the split_print folder to qmk_firmware/keyboards/. Alternatively, create a symlink from within the qmk_firmware/keyboards/ directory to the split_print directory in this repo.
 
 2. Build the firmware in /qmk_firmware:
 
-```qmk compile -kb split-print -km default```
+```qmk compile -kb split_print -km default```
 
 
-3. Flash the firmware in /qmk_firmware to each keyboard half. Be sure to check the bootloader if you're using a [different microcontroller)(https://github.com/qmk/qmk_firmware/blob/master/docs/feature_split_keyboard.md).
+3. Flash the firmware in /qmk_firmware to each keyboard half. You MUST flash each keyboard individually! I make sure to connect to each half directly, with the TRRS cable unplugged. Also, be sure to check the bootloader if you're using a [different microcontroller)(https://github.com/qmk/qmk_firmware/blob/master/docs/feature_split_keyboard.md).
 
-```qmk flash -kb split-print -km default -bl dfu-split-left```
+```qmk flash -kb split_print -km default -bl dfu-split-left```
 
 or
 
-```qmk flash -kb split-print -km default -bl dfu-split-right```
+```qmk flash -kb split_print -km default -bl dfu-split-right```
 
 If you want to modify the keymap.c for your own custom layout, checkout the [QMK keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md) so you know what to add into the keymap.
 
