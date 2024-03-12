@@ -32,7 +32,7 @@
 
 /* Mouse configuration */
 //#define MK_3_SPEED                        // Enable constant cursor speeds
-#define MK_KINETIC_SPEED                    // Enable quadratic cursor movement
+//#define MK_KINETIC_SPEED                    // Enable quadratic cursor movement
 
 #ifdef MK_3_SPEED
 /* Constant cursor mouse settings */
