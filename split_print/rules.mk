@@ -18,7 +18,7 @@ BOOTLOADER = atmel-dfu
 #   change to "no" to disable the options, or define them in the Makefile in
 #   the appropriate keymap folder that will get included automatically
 #
-BOOTMAGIC_ENABLE = no       # Virtual DIP switch configuration
+BOOTMAGIC_ENABLE = no       # Bootloader magic flag
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
@@ -32,7 +32,10 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
-SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
+SLEEP_LED_ENABLE = yes    	# Breathing sleep LED during USB suspend
 
 # enable split keyboard
 SPLIT_KEYBOARD = yes
+
+#VIA_ENABLE = yes			# Enable VIA support
+LTO_ENABLE = yes			# Link-time optimization

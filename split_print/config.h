@@ -1,31 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0x6E61 // set to the nullbits VID because the BIT-C doesn't seem to boot without it...
-#define PRODUCT_ID      0x6060
-
-#define DEVICE_VER      0x0002
-#define MANUFACTURER    "VeniVidiReliqui"
-#define PRODUCT         "splitprintv2"
-#define DESCRIPTION     "keyboard"
-
 /* key matrix size */
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 6
-
-/* key matrix pins */
-#define MATRIX_ROW_PINS { D7, C6, D4, D2, D3 }
-#define MATRIX_COL_PINS { B6, B2, E6, B4, B5, B3 }
-#define UNUSED_PINS
-
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
 
 /* key combination for command */
 #define IS_COMMAND() ( \
@@ -34,7 +12,7 @@
 
 /* Mouse configuration */
 //#define MK_3_SPEED                        // Enable constant cursor speeds
-#define MK_KINETIC_SPEED                    // Enable quadratic cursor movement
+//#define MK_KINETIC_SPEED                    // Enable quadratic cursor movement
 
 #ifdef MK_3_SPEED
 /* Constant cursor mouse settings */
@@ -75,20 +53,26 @@
  *
  * Note: This can cause issues with powered USB hubs. If power is delivered
  * to the keyboard but the computer isn't detected, this leads to both halves
- * booting into right hand mode. A power cycle of the board fixes this.
+ * booting into right hand mode. A power cycle of the keyboards while a computer is 
+ * connected to them will fix this.
  *
- * If you run into this issue, consider commenting this out and making separate
- * left/right builds with the MASTER_LEFT and MASTER_RIGHT flags.
+ * If you run into this issue, and can't use EEPROM bootloader configuration, 
+ * consider defining the MASTER_LEFT and MASTER_RIGHT options manually.
  */
-#define SPLIT_USB_DETECT
+//#define SPLIT_USB_DETECT
 
 #ifdef SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT       1000    // How long to wait before booting into right hand mode
 #define SPLIT_USB_TIMEOUT_POLL  10      // Poll rate to detect left/right hand mode
-#endif
 
 /* Select hand configuration */
 #define MASTER_LEFT
 //#define MASTER_RIGHT
+
+#endif
+
+#ifndef SPLIT_USB_DETECT
+#define EE_HANDS  // flag eeprom for split half bootloader
+#endif
 
 #endif
