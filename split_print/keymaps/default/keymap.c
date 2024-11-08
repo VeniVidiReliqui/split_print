@@ -25,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Pok3r inspired function layer
 	KEYMAP(
 		KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,    KC_F9,   KC_F10,  KC_DEL, \
-		KC_TAB,  KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_F11,      S(KC_3), KC_PGDN, KC_UP,    KC_PGUP, KC_MINS, KC_BSLS, \
+		KC_TAB,  KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_F11,      S(KC_3), KC_PGUP, KC_UP,    KC_PGDN, KC_MINS, KC_BSLS, \
 		MO(2),   KC_VOLD, KC_VOLU, KC_MUTE, KC_NO,   KC_F12,      KC_HOME, KC_LEFT, KC_DOWN,  KC_RGHT, KC_EQL,  KC_ENT, \
-		KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_END,  KC_QUOT, S(KC_9),  S(KC_0), KC_SLSH, KC_RSFT, \
+		KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_END,  KC_QUOT, S(KC_9),  S(KC_0), KC_BSLS, KC_RSFT, \
 		KC_LCTL, KC_NO,   KC_NO,   KC_LALT, KC_RGUI, KC_SPC,      KC_SPC,  KC_NO,   KC_LCBR,  KC_RCBR, S(KC_GRV), KC_RCTL \
         ),
 
